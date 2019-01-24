@@ -1,3 +1,12 @@
+<p align="center">
+  Do you want to code your own CoreArena?
+  <a href="https://www.spigotcourse.org/?utm_source=github&utm_medium=github">
+    <img src="https://i.imgur.com/Xr0p2g3.png" />
+  </a>
+</p>
+
+---
+
 # CoreArena
 CoreArena is a premium quality Bukkit plugin that brings a whole new experience to your Minecraft server in the form of a monster fight arena. Its unique approach is determined by
 
