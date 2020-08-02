@@ -1,10 +1,12 @@
 ---
 name: Bug report
 about: Report a problem, issue or a bug
-title: 'Minecraft Version: Your Issue Title'
-labels: Issue
+title: 'Minecraft Version: Issue Title'
+labels: issue
+assignees: ''
 
 ---
+
 <!---
 To report a problem or a bug with this plugin, please follow the three steps below:
 
