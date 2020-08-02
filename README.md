@@ -5,8 +5,6 @@
   </a>
 </p>
 
----
-
 # CoreArena
 CoreArena is a premium quality Bukkit plugin that brings a whole new experience to your Minecraft server in the form of a monster fight arena. Its unique approach is determined by
 
