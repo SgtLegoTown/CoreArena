@@ -1,5 +1,5 @@
 <p align="center">
-  Do you want to code your own CoreArena?
+  Do you want to code your own CoreArena?<br>
   <a href="https://mineacademy.org/gh-join">
     <img src="https://i.imgur.com/SuIyaDV.png" />
   </a>
