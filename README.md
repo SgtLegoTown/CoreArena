@@ -21,6 +21,12 @@ If you have any **questions or bugs to report**, try seeing if [those can be res
 
 Check out https://www.spigotmc.org/resources/42404 for more information.
 
+# Compiling
+
+1. Obtain Foundation from github.com/kangarko/Foundation
+2. Create library/ folder in CoreArena/ and obtain binaries described in pom.xml. You have to obtain them yourself. Regarding Boss, you can just remove the very few references to it in the source code and remove the dependency from pom.xml.
+3. Compile Foundation and CoreArena using Maven with the "clean install" goal.
+
 <hr>
 
 Dave Thomas, founder of OTI, godfather of the Eclipse strategy:
