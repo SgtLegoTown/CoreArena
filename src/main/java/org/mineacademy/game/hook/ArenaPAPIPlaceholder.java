@@ -128,7 +128,7 @@ public final class ArenaPAPIPlaceholder extends PlaceholderExpansion {
 	}
 
 	private String parseVariables(Arena arena, String param, Player selected, String[] args) {
-		if (selected == null || selected.isDead())
+		if (selected == null)
 			return "dead";
 
 		if ("name".equals(param))
@@ -140,12 +140,12 @@ public final class ArenaPAPIPlaceholder extends PlaceholderExpansion {
 			return "dead";
 
 		if ("health".equals(param))
-			return MathUtil.formatTwoDigits(selected.getHealth());
+			return selected.isDead() ? "dead" : MathUtil.formatTwoDigits(selected.getHealth());
 
 		else if ("location".contains(param)) {
 			final Location loc = selected.getLocation();
 
-			return "x:" + loc.getBlockX() + " y:" + loc.getBlockY() + " z:" + loc.getBlockZ();
+			return selected.isDead() ? "dead" : "x:" + loc.getBlockX() + " y:" + loc.getBlockY() + " z:" + loc.getBlockZ();
 		}
 
 		else if ("exp".equals(param))
