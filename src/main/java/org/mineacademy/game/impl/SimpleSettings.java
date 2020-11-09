@@ -86,6 +86,7 @@ public final class SimpleSettings extends YamlConfig implements ArenaSettings {
 	private int autoStopPlayersLimit;
 	private int endPhaseNoMonsters;
 	private int maxPhase;
+	private int spawnerActivationRadius;
 
 	// Commands
 	private ArenaCommands startCommands, lobbyStartCommands, phaseCommands, endCommands, finishCommands, playerLeaveCommands;
@@ -133,6 +134,7 @@ public final class SimpleSettings extends YamlConfig implements ArenaSettings {
 		playerJoinSound = getSound("Sound.Player_Join");
 		playerLeaveSound = getSound("Sound.Player_Leave");
 		arenaStartSound = getSound("Sound.Arena_Start");
+		spawnerActivationRadius = getInteger("Spawner_Activation_Radius");
 
 		loadLimits();
 		loadDurations();

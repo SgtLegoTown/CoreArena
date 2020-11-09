@@ -50,6 +50,9 @@ Mob_Burn_On_Sunlight: false
 # To prevent lag, limit the total amounts of mob within the arena region.
 Mob_Limit: 100
 
+# Spawn monsters only if at least one player is nearby in the radius around a monster spawner below:
+Spawner_Activation_Radius: 40
+
 # Configure player limits
 Player_Limit:
 

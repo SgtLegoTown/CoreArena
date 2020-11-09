@@ -53,9 +53,6 @@ Arena:
   # Even if this is false, you can still use "Commands.x.Player" for each player.
   Console_Commands_For_Each: false
 
-  # Spawn monsters only if at least one player is nearby in the radius around a monster spawner below:
-  Spawner_Activation_Radius: 40
-
   # Which commands can players run while playing in the arena?
   Allowed_Commands:
     - /arena

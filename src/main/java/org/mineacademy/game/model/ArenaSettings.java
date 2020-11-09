@@ -330,4 +330,5 @@ public interface ArenaSettings {
 
 	SimpleSound getArenaStartSound();
 
+	int getSpawnerActivationRadius();
 }

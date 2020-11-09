@@ -408,9 +408,10 @@ public final class SimplePhaseIncremental implements ArenaPhase {
 
 			final Location loc = spawner.getLocation().clone().add(0, 1, 0);
 			boolean inRange = false;
+			final int activationRadius = arena.getSettings().getSpawnerActivationRadius();
 
 			for (final Player arenaPlayer : arena.getPlayers())
-				if (arenaPlayer.getLocation().distance(loc) <= Settings.Arena.SPAWNER_ACTIVATION_RADIUS) {
+				if (arenaPlayer.getLocation().distance(loc) <= activationRadius) {
 					inRange = true;
 					Debugger.debug("spawning", "\tFound " + arenaPlayer.getName() + " in range of " + Math.round(arenaPlayer.getLocation().distance(loc)) + " blocks from spawner");
 
@@ -418,7 +419,7 @@ public final class SimplePhaseIncremental implements ArenaPhase {
 				}
 
 			if (!inRange) {
-				Debugger.debug("spawning", "\tFAIL - no players in range of " + Settings.Arena.SPAWNER_ACTIVATION_RADIUS + " blocks");
+				Debugger.debug("spawning", "\tFAIL - no players in range of " + activationRadius + " blocks");
 
 				continue;
 			}

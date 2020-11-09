@@ -35,7 +35,6 @@ public final class Settings extends SimpleSettings {
 		public static Boolean HIDE_DEATH_MESSAGES;
 		public static Boolean CONSOLE_CMD_FOREACH;
 		public static StrictSet<String> ALLOWED_COMMANDS;
-		public static Integer SPAWNER_ACTIVATION_RADIUS;
 
 		private static void init() {
 			pathPrefix("Arena");
@@ -49,7 +48,6 @@ public final class Settings extends SimpleSettings {
 			SHOW_HEALTH_BAR = getBoolean("Display_Mob_Health_Bar");
 			HIDE_DEATH_MESSAGES = getBoolean("Hide_Death_Messages");
 			CONSOLE_CMD_FOREACH = getBoolean("Console_Commands_For_Each");
-			SPAWNER_ACTIVATION_RADIUS = getInteger("Spawner_Activation_Radius");
 			ALLOWED_COMMANDS = new StrictSet<>(getStringList("Allowed_Commands"));
 		}
 
