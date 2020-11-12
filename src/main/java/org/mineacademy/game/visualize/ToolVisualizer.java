@@ -12,6 +12,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.mineacademy.corearena.CoreArenaPlugin;
 import org.mineacademy.fo.BlockUtil;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Valid;
@@ -19,6 +20,12 @@ import org.mineacademy.fo.collection.StrictList;
 import org.mineacademy.fo.menu.model.ItemCreator;
 import org.mineacademy.fo.menu.tool.Tool;
 import org.mineacademy.fo.remain.CompMaterial;
+import org.mineacademy.game.impl.ArenaPlayer;
+import org.mineacademy.game.impl.SimpleSpawnPointMonster;
+import org.mineacademy.game.menu.MenuMonsterSpawn;
+import org.mineacademy.game.model.Arena;
+import org.mineacademy.game.model.SpawnPoint;
+import org.mineacademy.game.tool.SpawnSelectorMonster;
 import org.mineacademy.game.type.BlockClick;
 
 import lombok.Getter;
@@ -94,8 +101,24 @@ public abstract class ToolVisualizer extends Tool {
 			visualizer.show(block.getLocation(), getDefaultMode());
 			Common.tell(player, makeActionMessage("&2set"));
 
-		} else
+		} else {
+
+			if (this instanceof SpawnSelectorMonster && e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+				final ArenaPlayer cache = CoreArenaPlugin.getDataFor(player);
+
+				if (cache.hasSetupCache()) {
+					final Arena arena = cache.getSetupCache().arena;
+					final SpawnPoint point = arena.getData().findSpawnPoint(block.getLocation());
+
+					if (point != null && point instanceof SimpleSpawnPointMonster)
+						new MenuMonsterSpawn((SimpleSpawnPointMonster) point, arena).displayTo(player);
+				}
+
+				return;
+			}
+
 			onRemove(player, block);
+		}
 	}
 
 	public final void onRemove(final Player player, final Block block) {
